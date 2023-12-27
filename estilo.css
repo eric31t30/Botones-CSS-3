@@ -1,0 +1,796 @@
+@import url('https://fonts.cdnfonts.com/css/sf-intermosaic');
+@import url('https://fonts.cdnfonts.com/css/neon-club-music');
+
+
+/* Diseños basicos para la pagina y contenedores */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #151E3F;
+    user-select: none;
+}
+
+body{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+/* Diseño para la scrollbar */
+body::-webkit-scrollbar{
+    width: 15px;
+    transition: all 2s ease;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #ffffff19;
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    background: #d596ef2a;
+}
+
+:root{
+    --color-fondo: #151E3F;
+}
+
+
+.contenedor{
+    position: relative;
+    display: flex;
+    height: 100%;
+    gap: 100px 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.btn{
+    position: relative;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    z-index: 2;
+    touch-action: none;
+    background: none;
+}
+
+
+.decoracion-pagina{
+    position: absolute;
+    z-index: 0;
+    filter: blur(20px);
+    pointer-events: none;
+    opacity: .4;
+}
+
+.decoracion-pagina-1{
+    width: 300px;
+    height: 300px;
+    background: rgb(32,224,213);
+    background: linear-gradient(90deg, rgba(32,224,213,1) 0%,
+    rgba(21,196,247,1) 50%, rgba(69,252,109,1) 100%);
+    border-radius: 100px;
+    transform: rotate(45deg);
+    left: 10px;
+    top: 1px;
+}
+
+
+.decoracion-pagina-2{
+    width: 200px;
+    height: 200px;
+    background: rgb(176,88,231);
+    background: linear-gradient(90deg, rgba(176,88,231,1) 0%
+    , rgba(232,55,136,1) 50%, rgba(249,213,80,1) 100%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    left: 1100px;
+    top: 90px;
+}
+
+.decoracion-pagina-3{
+    width: 350px;
+    height: 350px;
+    background: rgb(199,116,168);
+    background: linear-gradient(90deg, rgba(199,116,168,1) 0%,
+    rgba(137,82,255,1) 50%, rgba(60,246,12,1) 100%);
+    border-radius: 50px;
+    transform: rotate(69deg);
+    left: 300px;
+    top: 450px;
+}
+
+
+/* Diseños de los botones y con su enumeracion */
+
+/* boton 17 */
+
+
+
+.btn-17{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    background-color: #0b0a10;
+    border-radius: 20px;
+}
+
+
+.btn-17-bordes{
+    border: 2px solid rgba(199, 165, 198, 0.197);
+    transition: all .5s ease;
+}
+
+
+.btn-17-icono{
+    color: white;
+    background: none;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    filter: invert(100%);
+}
+
+/* boton 18 */
+
+.btn-18{
+    position: relative;
+    overflow: visible;
+    font-family: 'SF Intermosaic', sans-serif;
+    font-size: 20px;
+    letter-spacing: 10px;
+    background-image: url(imagenes/barra\ de\ vida\ \ x4.png);
+    background-position: center;
+    background-size: -60px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .1s linear;
+    text-align: center;
+    cursor: url(iconos/sword.png), auto;
+}
+
+
+.btn-18-animacion{
+    animation: btn-18-animacion-golpe .5s linear;
+}
+
+@keyframes btn-18-animacion-golpe{
+    0%{
+        transform: translateY(-10px);
+    }
+
+    40%{
+        transform: translateY(8px);
+    }
+    
+
+    60%{
+        transform: translateY(-6px);
+    }
+
+    80%{
+        transform: translateY(2px);
+    }
+    
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.btn-18-animacion-recup{
+    animation: btn-18-animacion-recup .5s linear;
+}
+
+@keyframes btn-18-animacion-recup{
+    0%{
+        opacity: 0;
+    }
+
+    20%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+    
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.btn-18-daño{
+    position: absolute;
+    background: none;
+    font-size: 20px;
+    top: 0px;
+    left: 240px;
+    opacity: 0;
+}
+
+.btn-18-daño-animacion{
+    animation: btn-18-daño-animacion .7s linear;
+}
+
+@keyframes btn-18-daño-animacion{
+    0%{
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+.btn-18-daño-gif{
+    position: absolute;
+    background: none;
+    display: none;
+}
+
+.btn-18-icono{
+    color: white;
+    background: none;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    filter: invert(100%);
+}
+
+
+/* boton 19 */
+
+
+.btn-19{
+    position: relative;
+    background-color: #ffffff09;
+    backdrop-filter: blur(10px);
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s linear;
+}
+
+:root{
+    --btn-19--borde: rgba(255, 255, 255, 0.353);
+    --btn-19--borde-activado: rgba(255, 255, 255, 0.832);
+}
+
+.btn-19-cont1,
+.btn-19-cont2,
+.btn-19-cont3,
+.btn-19-cont4{
+    position: absolute;
+    transition: all 2s ease;
+}
+
+.btn-19-cont1{
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    border-top: 2px solid var(--btn-19--borde);
+    width: 20%;
+    height: 0;
+}
+
+.btn-19-cont2{
+    top: 0;
+    right: 0;
+    border-right: 2px solid var(--btn-19--borde);
+    width: 0;
+    height: 20%;
+}
+
+.btn-19-cont3{
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid var(--btn-19--borde);
+    width: 20%;
+    height: 0;
+}
+
+.btn-19-cont4{
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid var(--btn-19--borde);
+    width: 0;
+    height: 20%;
+}
+
+
+.btn-19:active .btn-19-cont1,
+.btn-19:active .btn-19-cont3{
+    width: 100%;
+}
+
+.btn-19:active .btn-19-cont2,
+.btn-19:active .btn-19-cont4{
+    height: 100%;
+}
+
+
+.btn-19-activado1{
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.78);
+    transition: all .4s linear;
+    border-color: var(--btn-19--borde-activado);
+}
+
+.btn-19-activado2{
+    height: 100%;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.78);
+    transition: all .4s linear;
+    border-color: var(--btn-19--borde-activado);
+}
+
+
+.btn-19-icono{
+    color: white;
+    background: none;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    filter: invert(100%);
+}
+
+
+/* boton 20 */
+
+
+.btn-20{
+    position: relative;
+    background-color: #030a0b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 1s linear;
+    box-shadow: 0px 0px 10px rgba(15, 91, 123, 0.977);
+    width: 220px;
+    height: 60px;
+}
+
+.btn-20-reflejo{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+    height: 60px;
+    background-color: #030a0b;
+    border-radius: 10px;
+    transition: all .4s linear;
+    box-shadow: 0px 0px 10px rgba(15, 91, 123, 0.977);
+    transform: scaleY(-1)
+    rotateX(40deg);
+    opacity: .1;
+    pointer-events: none;
+}
+
+
+
+.btn-20:hover{
+    background: rgb(2, 29, 78);
+    background: linear-gradient(270deg, rgba(2,29,78,0.681)
+    0%, rgba(31,215,232,0.873) 60%);
+    color: rgba(4,4,38);
+    transition: all 1s linear;
+}
+
+
+.btn-20:hover .btn-20-reflejo{
+    background: rgb(2, 29, 78);
+    background: linear-gradient(270deg, rgba(2,29,78,0.681)
+    0%, rgba(31,215,232,0.873) 60%);
+    color: rgba(4,4,38);
+    transition: all 1s linear;
+    opacity: .2;
+}
+
+
+/* boton 21 */
+:root{
+    --x : 45deg;
+}
+
+.btn-21 {
+    position: relative;
+    border-radius: 5px;
+    overflow: visible;
+    width: 220px;
+    height: 65px;
+}
+
+.btn-21 i {
+    position: absolute;
+    inset: 2px;
+    display: block;
+    border-radius: 5px;
+}
+
+.btn-21 i,
+.btn-21:nth-child(2) {
+    background: linear-gradient(var(--x), #00ccff, #151E3F, #151E3F, #d400d4);
+    transition: all 2s linear;
+}
+
+.btn-21 i:nth-child(2) {
+    filter: blur(10px);
+}
+
+.btn-21 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn-21:active i,
+.btn-21:nth-child(2) {
+    background: linear-gradient(var(--x), #fa3508, #151E3F, #151E3F, #f6dd02);
+}
+
+
+
+/* boton 22 */
+
+
+.btn-22{
+    position: relative;
+    transition: all .8s ease;
+}
+
+.btn-22::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgb(196, 62, 149);
+    width: 100%;
+    height: 2px;
+    transition: all .8s ease;
+    z-index: -1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.btn-22:hover::before{
+    height: 100%;
+    border-bottom: 2px solid white;
+}
+
+.btn-22:hover{
+    text-shadow: 0px 0px 15px rgb(255, 254, 255);
+}
+
+
+/* boton 23 */
+
+.btn-23-contenedor{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+    height: 60px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.btn-23{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 2px solid grey;
+    transition: all 1s ease;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.btn-23-activado{
+    border-color: rgb(139, 227, 254);
+    box-shadow: 0px 0px 15px rgb(0, 195, 255);
+    transform: translateX(-60px);
+}
+
+.btn-23::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -33px;
+    width: 60px;
+    height: 60px;
+    transform: skew(25deg);
+    background: #1d1d1d;
+}
+
+
+.btn-23-span{
+    display: inline;
+    color: white;
+    position: absolute;
+    left: 104px;
+    top: 7px;
+    width: 0px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #000000;
+    border: 1px solid grey;
+    border-radius: 25px;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 1s ease;
+}
+
+.btn-23-span-activado{
+    position: absolute;
+    left: 104px;
+    top: 7px;
+    width: 220px;
+    height: 46px;
+    background: #000000;
+    border: 1px solid grey;
+    border-radius: 25px;
+    z-index: -1;
+    visibility: visible;
+    overflow: hidden;
+    transform: translateX(-60px);
+}
+
+.btn-23-span-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: none;
+    transition: all .7s ease;
+    opacity: 0;
+    display: inline-block; 
+    overflow: hidden;
+    letter-spacing: -3px;
+    padding: 0;
+}
+
+.btn-23-span-2-activado{
+    opacity: 1;
+    white-space: normal;
+    letter-spacing: 5px;
+}
+
+.btn-23-icono{
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    background: none;
+    filter: invert(100%);
+    user-select: none;
+}
+
+
+.btn-23-icono-activado{
+    position: absolute;
+    background: none;
+    animation: btn-23-icono-activado 1s ease;
+}
+
+@keyframes btn-23-icono-activado{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* boton 24 */
+
+.btn-24{
+    position: relative;
+    width: 220px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+
+.btn-24-span{
+    position: relative;
+    font-size: 20px;
+    font-family: 'NEON CLUB MUSIC', sans-serif;
+    transition: all 1s ease;
+    transform-origin: center;
+}
+
+
+.btn-24:hover .btn-24-span-1{
+    transform: rotateX(180deg);
+    color: rgb(252, 55, 55);
+    text-shadow: 0px 0px 15px red, 0px 0px 15px red;
+}
+
+.btn-24:hover .btn-24-span-2{
+    transform: rotateY(180deg);
+    color: cyan;
+    text-shadow: 0px 0px 15px cyan;
+}
+
+
+.btn-24:hover .btn-24-span-3{
+    transform: rotateX(-360deg);
+    color: greenyellow;
+    text-shadow: 0px 0px 15px greenyellow;
+}
+
+.btn-24:hover .btn-24-span-4{
+    transform: rotateY(180deg);
+    color: rgb(252, 13, 252);
+    text-shadow: 0px 0px 15px rgb(252, 13, 252);
+}
+
+
+.btn-24:hover .btn-24-span-5{
+    transform: rotateY(-360deg);
+    color: rgb(246, 249, 56);
+    text-shadow: 0px 0px 15px rgb(246, 251, 0);
+}
+
+@media (max-width: 719px){
+
+    body{
+        overflow: auto;
+    }
+
+   .contenedor{
+        margin: 40px auto;
+   }
+
+    .decoracion-pagina-1{
+        width: 120px;
+        height: 120px;
+        left: 20px;
+        top: 100px;
+    }
+
+    .decoracion-pagina-2{
+        left: 10px;
+        top: 850px;
+    }
+
+    .decoracion-pagina-3{
+        width: 180px;
+        height: 180px;
+        left: 120px;
+        top: 450px;
+    }
+
+}
+
+@media(min-width: 720px) and (max-width:1299px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 40px;
+        top: 20px;
+    }
+
+    .decoracion-pagina-2{
+        left: 370px;
+        top: 400px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 100px;
+        top: 1000px;
+    }
+}
+
+@media(min-width: 1300px) and (max-width: 1919px){
+
+    .contenedor{
+        gap: 250px 100px;
+    }
+
+    .decoracion-pagina-1{
+        width: 240px;
+        height: 240px;
+        left: 60px;
+        top: 60px;
+    }
+
+    .decoracion-pagina-2{
+        left: 1000px;
+        top: 200px;
+    }
+
+    .decoracion-pagina-3{
+        width: 300px;
+        height: 300px;
+        left: 200px;
+        top: 400px;
+    }
+
+
+}
+
+@media (min-width: 1920px){
+
+    .contenedor{
+        gap: 260px 350px;
+        margin: auto 50px;
+    }
+
+
+    .decoracion-pagina-1{
+        left: 300px;
+    }
+    
+    .decoracion-pagina-2{
+        left: auto;
+        right: 200px;
+        top: 300px;
+    }
+    
+    .decoracion-pagina-3{
+        left: 900px;
+        top: 700px;
+    }
+    
+}
+
